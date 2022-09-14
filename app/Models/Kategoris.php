@@ -4,20 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Articles extends Model
+class Kategoris extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'article';
+    protected $table            = 'kategori';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['user_id', 'judul', 'highlight', 'kategori', 'poster', 'slug', 'article'];
+    protected $allowedFields    = ['kategori'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

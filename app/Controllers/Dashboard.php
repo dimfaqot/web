@@ -16,15 +16,27 @@ class Dashboard extends BaseController
     }
     public function index()
     {
-
         $mod = \App\Models\Articles::class;
         $mod = new $mod;
+        if (count($this->request->getVar()) == 0) {
 
-        $q = $mod->join('user', 'user_id=user.id')->findAll();
+            $q = $mod->join('user', 'user_id=user.id')->findAll();
+        } else {
+            $q = $mod->join('user', 'user_id=user.id')->like('judul', $this->request->getVar('cari'), 'both')->findAll();
+        }
+
         $data = [
             'judul' => 'Dashboard',
             'data' => $q
         ];
         return view('dashboard', $data);
+    }
+    public function artikel()
+    {
+
+        $data = [
+            'judul' => 'Artikel Baru'
+        ];
+        return view('artikel', $data);
     }
 }

@@ -10,6 +10,12 @@ function menu()
     return $q;
 }
 
-function akses()
+function kategori()
 {
+    $mod = \App\Models\Kategoris::class;
+    $mod = new $mod;
+
+    $q = $mod->findAll();
+
+    return $q;
 }

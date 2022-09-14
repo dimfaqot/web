@@ -39,6 +39,9 @@ $routes->get('/', 'Home::index');
 
 
 $routes->get('dashboard', 'Dashboard::index');
+$routes->post('dashboard', 'Dashboard::index');
+$routes->get('dashboard/artikel', 'Dashboard::artikel');
+
 $routes->get('login', 'Login::index');
 $routes->post('login', 'Login::auth');
 
