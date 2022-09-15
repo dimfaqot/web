@@ -19,3 +19,9 @@ function kategori()
 
     return $q;
 }
+
+function firstWordUpCase($text)
+{
+    $newText = ucwords(strtolower($text));
+    return $newText;
+}

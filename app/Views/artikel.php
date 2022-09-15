@@ -10,14 +10,14 @@ helper('functions');
 <div class="container-fluid">
     <?= form_open_multipart(base_url() . '/single/artikel') ?>
 
-    <div class="mb-2">
+    <div class="mb-4">
         <label class="form-label">Judul</label>
         <input type="text" name="judul" class="form-control form-control-sm" placeholder="Judul" value="">
     </div>
 
-    <div class="form-group mb-2">
-        <label>Kategori</label>
-        <select name="kategori" class="form-control form-control-sm">
+    <div class="form-group mb-4">
+        <label>Kategori</label> <a class="btn btn-sm btn-primary" href="<?= base_url(); ?>/dashboard/kategori" role="button"><i class="fa fa-plus"></i> Tambah Kategori</a>
+        <select name="kategori" class="form-control form-control-sm mt-1">
             <?php foreach (kategori() as $i) : ?>
                 <?php if ($i['kategori'] == "Iswa") : ?>
                     <option selected value="<?= $i['kategori']; ?>"><?= $i['kategori']; ?></option>
@@ -41,7 +41,7 @@ helper('functions');
         <textarea class="form-control" name="highlight" rows="3"></textarea>
     </div>
     <div class="d-flex justify-content-center">
-        <button style="width:100px;" type="submit" class="btn btn-primary btn-sm">Save</button>
+        <button style="width:100px;" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-folder"></i> Save</button>
     </div>
     </form>
 </div>

@@ -8,6 +8,10 @@ helper('functions');
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
+    <form class="mb-3" action="<?= base_url(); ?>/single/delete" method="post">
+        <input type="hidden" name="id" value="<?= $data['id']; ?>">
+        <button style="width:100px;" type="submit" class="btn btn-danger btn-sm mt-3"><i class="fa fa-trash"></i> Delete</button>
+    </form>
     <?= form_open_multipart(base_url() . '/single/edit') ?>
     <div class="mb-2">
         <label class="form-label">Url</label>
@@ -31,6 +35,7 @@ helper('functions');
                     <option value="<?= $i['kategori']; ?>"><?= $i['kategori']; ?></option>
                 <?php endif; ?>
             <?php endforeach; ?>
+
         </select>
     </div>
     <div class="d-flex flex-row mb-3">
@@ -48,6 +53,8 @@ helper('functions');
         <button style="width:100px;" type="submit" class="btn btn-primary btn-sm mt-3">Save</button>
     </div>
     </form>
+
+
 </div>
 
 

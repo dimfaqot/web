@@ -58,6 +58,6 @@ class Login extends BaseController
         session()->remove('alias');
         session()->remove('image');
 
-        return redirect()->to(base_url("login"));
+        return redirect()->to(base_url());
     }
 }

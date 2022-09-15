@@ -36,17 +36,24 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->post('/', 'Home::index/$1');
+$routes->get('berita/(:any)', 'Home::berita/$1');
 
 
 $routes->get('dashboard', 'Dashboard::index');
-$routes->post('dashboard', 'Dashboard::index');
+$routes->post('dashboard', 'Dashboard::index/$1');
 $routes->get('dashboard/artikel', 'Dashboard::artikel');
+$routes->get('dashboard/kategori', 'Dashboard::kategori');
 
 $routes->get('login', 'Login::index');
 $routes->post('login', 'Login::auth');
+$routes->get('login/logout', 'Login::logout');
 
 $routes->get('single/(:any)', 'Single::index/$1');
 $routes->post('single/edit', 'Single::edit');
+$routes->post('single/artikel', 'Single::artikel');
+$routes->post('single/kategori', 'Single::kategori');
+$routes->post('single/delete', 'Single::delete');
 
 $menu = \App\Models\Menus::class;
 $menu = new $menu;
